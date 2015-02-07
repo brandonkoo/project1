@@ -1,3 +1,4 @@
+require 'byebug'
 class ProductsController < ApplicationController
   def index
     @products = Product.all
@@ -12,25 +13,20 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @products = Product.new(product_params)
-    if @products.save
-      flash[:success] = 'Product successfully created.'
-      redirect_to products_path(@products)
+
+    @product = Product.new(product_params) #(params[:prod_name, :description, :price])
+    if @product.save
+
+      #binding.byebug
+      redirect_to "/products"
     else
       render :new
     end
+  end
 
-
-    end
-
-
-
-
-
-    private
 
   def product_params
-    params.require(:prod_name).permit(:description, :price)
+    params.require(:product).permit(:prod_name, :description, :price)
   end
 
 
