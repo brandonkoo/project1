@@ -1,4 +1,6 @@
 class CustomersController < ApplicationController
+  before_action :set_customers, only: [:show, :edit, :update, :destroy]
+
   def index
     @customers = Customer.all
   end
@@ -13,8 +15,8 @@ class CustomersController < ApplicationController
 
   def create
 
-    @product = Customer.new(customer_params) #(params[:prod_name, :description, :price])
-    if @customer.save
+    @customers = Customer.new(customer_params) #(params[:prod_name, :description, :price])
+    if @customers.save
       redirect_to "/customers"
 
       else
@@ -55,7 +57,7 @@ class CustomersController < ApplicationController
   private
 
   def customer_params
-    params.require(:customers).permit(:name, :address, :city, :zipcode, :state, :phone)
+    params.require(:customer).permit(:name, :address, :city, :state, :zipcode, :phone)
   end
   def set_customers
       @customers = Customer.find(params[:id])
