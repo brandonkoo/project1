@@ -1,6 +1,50 @@
 
-<h1>orders</h1>
+<h1><%= Order%></h1>
 
-<%= @orders.each do |a| %>
-  <p></p>
-<% end %>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>City</th>
+      <th>State</th>
+      <th>zipcode</th>
+      <th>Phone</th>
+      <th>product</th>
+      <th>description</th>
+      <th>price</th>
+      <th>comment</th>
+
+
+
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @orders.each do |orders| %>
+      <tr>
+        <td><%= orders.customer.name %></td>
+        <td><%= orders.customer.address %></td>
+        <td><%= orders.customer.city %></td>
+        <td><%= orders.customer.state %></td>
+        <td><%= orders.customer.zipcode %></td>
+        <td><%= orders.customer.phone %></td>
+        <td><%= orders.product.prod_name %></td>
+        <td><%= orders.product.description %></td>
+        <td><%= orders.product.price %></td>
+        <td><%= orders.comment %></td>
+
+        <td><%= link_to 'Show', orders %></td>
+        <td><%= link_to 'Edit', edit_order_path(orders) %></td>
+        <td><%= link_to 'Destroy', orders, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+
+
+
+
+    <% end %>
+  </tbody>
+</table>
+
+<br>
