@@ -1,8 +1,17 @@
+<p>
+  <b>Product:</b>
+  <%= @products.prod_name %>
+</p>
 
-  <h1><%= @products.id %></h1>
+<p>
+  <b>Description:</b>
+  <%= @products.description %>
+</p>
 
-  <h1><%= @products.prod_name %></h1>
-  <h1><%= @products.description%></h1>
-  <h1><%= @products.price %></h1>
+<p>
+  <b>Price:</b>
+  <%= number_to_currency(@products.price, :unit => "$") %>
+</p>
 
 
+ <%= link_to "Buy #{@products.prod_name} Now!", :class => 'btn btn-danger btn-large', :id => 'buy-now-button' %>

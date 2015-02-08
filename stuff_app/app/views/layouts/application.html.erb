@@ -1,14 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>StuffApp</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+<title>Stuff App</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<%= stylesheet_link_tag    "application", :media => "all" %>
+<%= javascript_include_tag "application" %>
+<%= csrf_meta_tags %>
 </head>
 <body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+<div class="navbar-inner">
+<div class="container">
+
+  <span class="icon-bar">
+  <span class="icon-bar">
+  <span class="icon-bar">
+</button>
+
+<div class="nav-collapse collapse">
+  <ul class="nav pull-right">
+
+  </ul>
+</div>
+</div>
+</div>
+</div>
+
+<div class="container">
+
+<div class="row-fluid">
+<div class="span8">
+<% if flash.notice %>
+  <div class="alert alert-block alert-info">
+    <button type="button" class="close" data-dismiss="alert">×
+    <%= flash.notice %>
+  </div>
+<% end %>
+<% if flash.alert %>
+  <div class="alert alert-block alert-error">
+    <button type="button" class="close" data-dismiss="alert">×
+    <%= flash.alert %>
+  </div>
+<% end %>
+</div>
+</div>
 
 <%= yield %>
+
+</div>
 
 </body>
 </html>
