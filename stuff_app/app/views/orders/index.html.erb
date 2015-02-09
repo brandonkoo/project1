@@ -35,9 +35,9 @@
         <td><%= orders.product.price %></td>
         <td><%= orders.comment %></td>
 
-        <td><%= link_to 'Show', orders %></td>
+
         <td><%= link_to 'Edit', edit_order_path(orders) %></td>
-        <td><%= link_to 'Destroy', orders, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
 
 
 
@@ -47,4 +47,6 @@
   </tbody>
 </table>
 
-<br>
+<p><%= link_to "Back to Stuff list", root_path %></p>
+
+

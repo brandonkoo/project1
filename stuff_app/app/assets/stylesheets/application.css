@@ -22,6 +22,5 @@ a.btn:visited { color: #FFF; }
 
 div.navbar div.container a { color: #EEE}
 
-#buy-now-button {margin: 20px 0px ;}
+#buy-now-button {margin: 40px 10px ;}
 
-@media only screen and (max-width: 480px) {

@@ -14,4 +14,11 @@
 </p>
 
 
- <%= link_to "Buy #{@products.prod_name} Now!", :class => 'btn btn-danger btn-large', :id => 'buy-now-button' %>
+
+
+ <%= link_to "Buy #{@products.prod_name} Now!", orders_path %>
+
+
+
+
+<p><%= link_to "Back to Stuff list", root_path %></p>

@@ -16,7 +16,7 @@
       <tr>
         <td><%= products.prod_name %></td>
         <td><%= products.description %></td>
-        <td><%= products.price %></td>
+        <td><%= products.price.round (2) %></td>
         <td><%= link_to 'Show', products %></td>
         <td><%= link_to 'Edit', edit_product_path(products) %></td>
         <td><%= link_to 'Destroy', products, method: :delete, data: { confirm: 'Are you sure?' } %></td>
