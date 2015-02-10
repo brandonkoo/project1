@@ -1,3 +1,6 @@
+<h2><%= Product %></h2>
+
+<table class="table table-striped table-bordered">
 <p>
   <b>Product:</b>
   <%= @products.prod_name %>
@@ -13,7 +16,7 @@
   <%= number_to_currency(@products.price, :unit => "$") %>
 </p>
 
-
+</table>
 
 
  <%= link_to "Buy #{@products.prod_name} Now!", orders_path %>

@@ -3,6 +3,8 @@ class OrdersController < ApplicationController
   before_action :set_customers, only: [:show, :edit, :update, :destroy]
   before_action :set_products, only: [:show, :edit, :update, :destroy]
 
+
+
   def index
     @orders = Order.all
     @customers = Customer.all
@@ -22,8 +24,9 @@ class OrdersController < ApplicationController
 
 
     @order = Order.new(order_params) #(params[:prod_name, :description, :price])
-    if @order.save
-      redirect_to "/orders"
+    if @order.save(order_params)
+       format.html { redirect_to orders_url, notice: 'orders was successfully created.' }
+       #redirect_to "/orders"
 
       else
         format.html { render :new }
