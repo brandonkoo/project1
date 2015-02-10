@@ -1,13 +1,17 @@
 Rails.application.routes.draw do
 
 
-
-
   devise_for :users
-  root :to => "main#index"
+  resources :products, only: [:index]
+  resource :cart, only: [:show]
+  resources :order_items, only: [:create, :update, :destroy]
+  root to: "products#index"
 
 
-  resources :customers, :products, :orders
+  #root :to => "main#index"
+
+
+  #resources :customers, :products, :orders
 
 
 

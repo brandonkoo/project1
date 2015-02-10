@@ -1,31 +1,11 @@
+<h3 class="text-center">Stuff for Sale</h3>
 
-<h1>products</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Products</th>
-      <th>Description</th>
-      <th>Price</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @products.each do |products| %>
-      <tr>
-        <td><%= products.prod_name %></td>
-        <td><%= products.description %></td>
-        <td><%= products.price.round (2) %></td>
-        <td><%= link_to 'Show', products %></td>
-        <td><%= link_to 'Edit', edit_product_path(products) %></td>
-        <td><%= link_to 'Destroy', products, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-
-      </tr>
+<div class="row">
+  <div class="col-xs-6 col-xs-offset-3">
+    <% @products.each do |product| %>
+      <%= render "product_row", product: product, order_item: @order_item %>
     <% end %>
-  </tbody>
-</table>
-
-<br>
+  </div>
+</div>
 
 

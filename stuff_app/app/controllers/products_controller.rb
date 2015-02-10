@@ -3,6 +3,7 @@ class ProductsController < ApplicationController
   before_action :set_products, only: [:show, :edit, :update, :destroy]
   def index
     @products = Product.all
+    @order_item = current_order.order_items.new
   end
 
   def new

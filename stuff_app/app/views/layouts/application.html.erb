@@ -1,8 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Stuff App</title>
-<p class="navbar-text pull-right">
+  <title>STUFF for sale</title>
+
+<%= javascript_include_tag "application" %>
+<%= csrf_meta_tags %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <% if request.ssl? %>
+    <%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' %>
+    <%= javascript_include_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js' %>
+  <% else %>
+    <%= stylesheet_link_tag 'http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' %>
+    <%= javascript_include_tag 'http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js' %>
+  <% end %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+
+  <%= csrf_meta_tags %>
+   <p class="navbar-text pull-right">
 <% if user_signed_in? %>
   Logged in as <strong><%= current_user.email %></strong>.
   <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
@@ -13,56 +27,20 @@
 <% end %>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <%= stylesheet_link_tag    "application", :media => "all" %>
-<%= javascript_include_tag "application" %>
-<%= csrf_meta_tags %>
 </head>
 <body>
-<div class="navbar navbar-inverse navbar-fixed-top">
-<div class="navbar-inner">
-<div class="container">
-
-  <span class="icon-bar">
-  <span class="icon-bar">
-  <span class="icon-bar">
-</button>
-
-<div class="nav-collapse collapse">
-  <ul class="nav pull-right">
-
-  </ul>
-</div>
-</div>
-</div>
-</div>
-
-<div class="container">
-
-<div class="row-fluid">
-<div class="span8">
-<% if flash.notice %>
-  <div class="alert alert-block alert-info">
-    <button type="button" class="close" data-dismiss="alert">×
-    <%= flash.notice %>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-6">
+        <h1><%= link_to "STUFF", root_path %></h1>
+      </div>
+      <div class="col-xs-6 text-right">
+        <h1 class="cart-text"><%= render 'layouts/cart_text' %></h1>
+      </div>
+    </div>
+    <hr>
+    <%= yield %>
   </div>
-<% end %>
-<% if flash.alert %>
-  <div class="alert alert-block alert-error">
-    <button type="button" class="close" data-dismiss="alert">×
-    <%= flash.alert %>
-  </div>
-<% end %>
-</div>
-</div>
-<% if notice %>
-  <p class="alert alert-success"><%= notice %></p>
-<% end %>
-<% if alert %>
-  <p class="alert alert-danger"><%= alert %></p>
-<% end %>
-
-<%= yield %>
-
-</div>
 
 </body>
 </html>
