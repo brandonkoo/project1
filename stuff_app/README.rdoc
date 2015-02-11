@@ -1,28 +1,35 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a simulation of a shopping app.....
 
-Things you may want to cover:
+User story:
+As a user, I want to create a user account on the web site for security and making purchase.
+As a user, I want to be able to see a list of product that is available to buy.
+As a user, I want to be able to click on the product to choose the quantity to buy.
+As a user, I want to be able to see the shopping cart of the product I choose and edit the cart if needed.
+As a user, I want to paid for the purchase with my credit card.
 
-* Ruby version
+Database model:
 
-* System dependencies
+Database table: customers, order_items, order_statuses, order, products, users
 
-* Configuration
+Database relationship: customers, products, order_statuses has many orders.
+                       orders has many order_items.
 
-* Database creation
+Web site Functionality:
 
-* Database initialization
+Implement Device for user logon registration.
 
-* How to run the test suite
+Implement shopping cart to display products, add products to cart and calculate total price.
 
-* Services (job queues, cache servers, search engines, etc.)
+Shopping cart can be edited to increase and decrease quantity of product. sub-total will adjust accordingly.
 
-* Deployment instructions
+when click on "checkout" link, a non functioning payment page will display to input credit card information.
 
-* ...
+A confirmation order page will display after payment page is submitted.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Heroku app demo page:
+
+https://sleepy-citadel-2389.herokuapp.com/
+
