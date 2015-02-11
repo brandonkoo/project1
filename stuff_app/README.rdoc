@@ -4,9 +4,13 @@ This is a simulation of a shopping app.....
 
 User story:
 As a user, I want to create a user account on the web site for security and making purchase.
+
 As a user, I want to be able to see a list of product that is available to buy.
+
 As a user, I want to be able to click on the product to choose the quantity to buy.
+
 As a user, I want to be able to see the shopping cart of the product I choose and edit the cart if needed.
+
 As a user, I want to paid for the purchase with my credit card.
 
 Database model:
