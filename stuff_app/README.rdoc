@@ -17,8 +17,9 @@ Database model:
 
 Database table: customers, order_items, order_statuses, order, products, users
 
-Database relationship: customers, products, order_statuses has many orders.
-                       orders has many order_items.
+Database relationship: 
+customers, products, order_statuses has many orders.
+orders has many order_items.
 
 Web site Functionality:
 
